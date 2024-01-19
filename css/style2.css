@@ -1,0 +1,612 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .meet-heading {
+        font-size: 90px;
+        text-align: center;
+        font-weight: 800;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .m-heading {
+        background-color: #00c5c7;
+        text-align: center;
+        margin-left: 20%;
+        margin-right: 20%;
+        font-weight: 800;
+        color: aliceblue;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    /* CORRECT THE HERO IMAGE: I also changed the height to a 850px to give clearer view of the cute puppies */
+    
+    .main-body-section-div {
+        /* background: url("./Assets/Images/main-heading-body-bg.jpg") no-repeat center
+    center/cover; */
+        background-repeat: no-repeat!important;
+        background-size: cover!important;
+        min-height: 850px;
+        opacity: 0.9;
+        padding-top: 80px;
+        transition: background 0.6s ease-in-out;
+    }
+    
+    .main-body-heading-text {
+        padding-top: 8%;
+        padding-left: 5%;
+    }
+    /* CORRECT THE HERO IMAGE: The list element style was causing the whitespace. Removing it succesfully fixes the problem */
+    
+    .main-body-section>li {
+        list-style: none;
+    }
+    /*CORRECT THE HERO IMAGE: Added display flex property to move image element to the top left  */
+    
+    .heading-main-body {
+        display: flex;
+        justify-content: start;
+        width: 100%;
+    }
+    
+    .main-body-section-div h1 {
+        font-size: 64px;
+        /* padding-left: 18.8%; */
+        color: azure;
+        font-weight: bold;
+        letter-spacing: 4px;
+    }
+    
+    .main-body-section-div p {
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: white;
+    }
+    
+    .main-body-heading-text span {
+        color: #c97f06;
+        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .pet-card-flex {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .main-card {
+        display: flex;
+        flex-direction: row;
+        border: 5px #efffc8 solid;
+        align-items: center;
+        background: linear-gradient(40deg, #fcff49 0%, #ffd74f 100%);
+        border-radius: 50px;
+        width: 46%;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .one-line-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    .main-img {
+        position: relative;
+        background-color: rgb(255, 231, 202);
+        border-radius: 50px;
+        overflow: hidden;
+        transition: all 300ms;
+    }
+    
+    .hv {
+        position: relative;
+        background-size: cover;
+        transition: all 300ms;
+    }
+    
+    .hv::after {
+        transition: all 300ms;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 231, 202);
+        top: 0;
+        opacity: 0;
+    }
+    
+    .hv:hover::after {
+        opacity: 0.2;
+    }
+    
+    .hv:hover {
+        transform: scale(1.1);
+    }
+    
+    .card-img-div {
+        border-radius: 50px;
+    }
+    
+    .card-img-a {
+        background-color: rgb(255, 231, 202);
+        color: rgb(255, 231, 202);
+    }
+    
+    .card-height {
+        height: 370px;
+    }
+    
+    .card-img-size {
+        border-radius: 50px;
+        border: 8px solid #ffffff;
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+        object-position: 25% 75%;
+        ;
+    }
+    /* mobile-view */
+    
+    @media only screen and (max-width: 768px) {
+        .meet-heading {
+            font-size: 45px;
+        }
+        .one-line-card {
+            flex-direction: column;
+        }
+        .card-height {
+            height: fit-content;
+        }
+        .footer {
+            flex-direction: column;
+        }
+    }
+    
+    @media only screen and (max-width:1225px) {
+        .main-img {
+            padding: 0;
+            margin-top: 1rem;
+        }
+        .card-height {
+            height: fit-content;
+        }
+        .main-card {
+            width: 96%;
+            max-width: 400px;
+            margin: 10px auto;
+            flex-direction: column;
+        }
+    }
+    
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+    @layer components {
+        .card {
+            background-color: theme("colors.white");
+            border-radius: theme("borderRadius.lg");
+            padding: theme("spacing.6");
+            box-shadow: theme("boxShadow.xl");
+        }
+        .contributors-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #131c2b;
+            padding-bottom: 2.75rem;
+            border-bottom: 1px solid gray;
+        }
+        .contributors-container h1 {
+            color: whitesmoke;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 2.5rem 0;
+        }
+        .contributors {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0 8%;
+        }
+        .avatar {
+            border-radius: 50%;
+            width: 4rem;
+        }
+        .contribute-btn {
+            display: flex;
+            align-items: center;
+            color: whitesmoke;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            letter-spacing: 1.5px;
+            background-color: #003479;
+        }
+        .contribute-btn img {
+            width: 2.2rem;
+            color: black;
+            margin-right: 5px;
+        }
+        /* back to top button */
+        #bttbutton {
+            position: fixed;
+            bottom: 20px;
+            right: 40px;
+            z-index: 9999;
+            border: none;
+            outline: none;
+            width: 55px;
+            transition: all 0.5s ease;
+            display: none;
+        }
+        /*-------sos button ---------*/
+        #mySBtn {
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: red !important;
+            /* Set a background color */
+            color: white !important;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 25px !important;
+            /* Some padding */
+            border-radius: 50%;
+            /* Rounded corners */
+            font-size: 18px;
+            /* Increase font size */
+        }
+        #mySBtn:hover {
+            background-color: #fff !important;
+            /* Add a dark-grey background on hover */
+            color: red !important;
+            font-weight: 700 !important;
+        }
+        /*-----end of sos button----*/
+        .contact-form-container {
+            max-width: 700px;
+            width: 100%;
+            margin: auto;
+        }
+    }
+    /* Add this CSS code to hide the About content initially */
+    
+    #about .fade-in {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    
+    .contributors {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .contributors-container {
+        padding-top: 20px;
+    }
+    
+    .hover-button {
+        /* Button styles */
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        font-size: 1.5rem;
+        border-radius: 0.5rem;
+        border: 0.1rem solid rgb(68, 38, 0);
+        color: #fff;
+        cursor: pointer;
+        background: #895a21 !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .hover-button:hover {
+        /* Hover styles */
+        background: #ffbb00 !important;
+        color: #000000;
+    }
+    
+    @keyframes fade-in-right {
+        0% {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .anima-fade-in-right {
+        animation: fade-in-right 0.5s ease-in-out;
+    }
+    
+    @keyframes scroll-fade-in {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes scroll {
+        from {
+            transform: translateY(0px);
+        }
+        to {
+            transform: translateY(-100px);
+        }
+    }
+    
+    .scroll-fade-in {
+        animation: scroll-fade-in 0.5s ease-in-out both;
+    }
+    
+    .scroll {
+        animation: scroll 0.5s ease-in-out both;
+    }
+    /*-----end of sos button----*/
+    /* copy right  */
+    
+    #copyright {
+        text-align: center;
+        padding: 2px 2px 2px 2px;
+        background-color: black;
+        color: white;
+    }
+    
+    .facebook-icon {
+        fill: lightgray;
+        transition: fill 0.3s;
+    }
+    
+    .facebook-icon:hover {
+        fill: blue;
+    }
+    
+    .instagram-icon {
+        fill: lightgray;
+        transition: fill 0.3s;
+    }
+    
+    .instagram-icon:hover {
+        fill: rgb(251, 72, 254);
+    }
+    
+    .github-icon {
+        fill: lightgray;
+        transition: fill 0.3s;
+    }
+    
+    .github-icon:hover {
+        fill: #6e5494;
+    }
+    
+    #google_translate_element select {
+        font-size: 14px;
+        border-radius: 20px;
+        padding: 8px;
+        padding-inline: 12px;
+        outline: none;
+        border: brown;
+        color: gray;
+        font-family: "Poppins";
+    }
+    
+    #google_translate_element div {
+        color: white;
+    }
+    /* CSS TANG THU CUNG */
+    
+    @import url("https://use.typekit.net/eia7dfc.css");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap");
+     :root {
+        --white: #fff;
+        --black: #000;
+        --blue: #0192cc;
+        --mustard: #ffae00;
+        --blue-button: #0192cc70;
+        --mustard-button: #ffae0071;
+        --poppins: "Poppins", sans-serif;
+        --futura: futura-pt, sans-serif;
+        --hover-transform: translate(-50%, -50%);
+    }
+    
+    body {
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    .content-pet {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .split {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        transition: 1s all cubic-bezier(0.87, 0.76, 0.33, 0.98);
+        overflow: hidden;
+    }
+    
+    .split.left {
+        left: 0;
+        background: var(--mustard);
+    }
+    /* #ffbb00; */
+    
+    .split.right {
+        right: 0;
+        background: var(--blue);
+    }
+    
+    .hover-left .split.left,
+    .hover-right .split.right {
+        width: 62%;
+    }
+    
+    .hover-left .split.right,
+    .hover-right .split.left {
+        width: 38%;
+    }
+    
+    .cat {
+        width: 50%;
+        position: absolute;
+        top: 52%;
+        left: 50%;
+    }
+    
+    .dog {
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    
+    .text-pet {
+        position: absolute;
+        top: 50.5%;
+        left: 50%;
+        white-space: nowrap;
+        transition: all 1s cubic-bezier(0.87, 0.76, 0.33, 0.98);
+    }
+    
+    .text-pet .subtitle,
+    .text-pet .button {
+        font-family: var(--poppins);
+    }
+    
+    .text-pet .subtitle {
+        font-size: 1.75vw;
+        font-weight: 600;
+        letter-spacing: 2px;
+        letter-spacing: 1px;
+    }
+    
+    .text-pet .title {
+        font-size: 4.5vw;
+        text-transform: uppercase;
+        font-family: var(--futura);
+        font-weight: 800;
+        font-style: normal;
+        overflow: hidden;
+        line-height: 1;
+        letter-spacing: 5px;
+        margin-top: 2px;
+    }
+    
+    .text-pet .button {
+        margin-top: 15px;
+        font-size: 1.35vw;
+        display: block;
+        position: absolute;
+        background: transparent;
+        border: var(--white) solid 3px;
+        height: 3.25rem;
+        text-align: center;
+        font-weight: 600;
+        width: 70%;
+        letter-spacing: 1px;
+        cursor: pointer;
+        outline: none;
+        border-radius: 100px;
+    }
+    
+    .text-pet .subtitle,
+    .text-pet .title,
+    .text-pet .button {
+        color: var(--white);
+    }
+    
+    #left-button {
+        background: var(--mustard-button);
+    }
+    
+    #right-button {
+        background: var(--blue-button);
+    }
+    
+    #left-button:focus,
+    #left-button:hover,
+    #left-button:active,
+    #right-button:focus,
+    #right-button:hover,
+    #right-button:active {
+        background-color: var(--blue);
+    }
+    
+    #left-button:active,
+    #right-button:active {
+        transform: translateY(6px);
+    }
+    
+    .cat,
+    .dog,
+    .text-pet,
+    .hover-left .split.left .text-pet,
+    .hover-left .split.right .text-pet,
+    .hover-right .split.right .text-pet,
+    .hover-right .split.left .text-pet {
+        transform: var(--hover-transform);
+    }
+    
+    @keyframes octocat-wave {
+        0%,
+        100% {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+    
+    @media screen and (max-width: 500px) {
+        .text-pet .subtitle {
+            font-size: 12px;
+        }
+        .text-pet .button {
+            margin-top: 15px;
+            font-size: 12px;
+            padding: 3px 2px;
+            height: 3rem;
+            width: 100%;
+            font-weight: 500;
+            letter-spacing: 0.75px;
+            overflow: hidden;
+            overflow-wrap: break-word;
+        }
+    }
